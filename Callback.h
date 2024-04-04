@@ -63,16 +63,10 @@ public:
 	{
 	}
 
-	Callback( const Callback<ConsumerT,ReturnT,Param1T,Param2T,Param3T>& e ) :
-			object(e.object), member(e.member)
-	{
-	}
-
+	Callback( const Callback<ConsumerT,ReturnT,Param1T,Param2T,Param3T>& e ) : object(e.object), member(e.member)
+	{ }
 	ReturnT operator()(Param1T param1, Param2T param2, Param3T param3)
-	{
-		return (const_cast<ConsumerT*>(object)->*member)
-		       (param1,param2,param3);
-	}
+	{ return (const_cast<ConsumerT*>(object)->*member) (param1,param2,param3); }
 
 private:
 

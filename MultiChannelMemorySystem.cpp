@@ -377,6 +377,8 @@ void MultiChannelMemorySystem::actual_update()
 	{
 		InitOutputFiles(traceFilename);
 		DEBUG("DRAMSim2 Clock Frequency ="<<clockDomainCrosser.clock1<<"Hz, CPU Clock Frequency="<<clockDomainCrosser.clock2<<"Hz"); 
+		std::cout << "======= DRAMSim2 Clock Frequency: "<<(int)(clockDomainCrosser.clock1/1000/1000)<<"MHz" << std::endl;
+		std::cout << "=======      CPU Clock Frequency: "<<(int)(clockDomainCrosser.clock2/1000/1000)<<"MHz" << std::endl;
 	}
 
 	if (currentClockCycle % EPOCH_LENGTH == 0)
